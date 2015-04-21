@@ -1,0 +1,2 @@
+# max2sat
+A simple max2sat solver written in C++. It takes a .txt file as input, with 2 integers per line. The integer represents the boolean literal, and its sign denotes its truth value positive for true, negative for false. We disallow 0 to avoid problems, so literals are numbered 1 to K, and are considered to be a contiguous range, ie there are no gaps. It has an exact solver that computes the solution by exhaustive enumeration with some small optimizations, and a naive approximate solution. I may at some point implement a simplex solver, but this is unlikely.
