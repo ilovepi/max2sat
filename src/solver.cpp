@@ -159,27 +159,42 @@ solution solver::approx() {
 }
 
 int main() {
-  std::string filename = "../Data/instance.txt";
+  // std::string filename = "../Data/instance.txt";
+  std::string filename = "../Data/test_25.txt";
   solver s(filename);
-  solver s2(filename);
- 
+
   solution ans;
- 
-  // if(n == 1)
-   //ans = s.exact();
 
-  // else
-   //ans = s.approx();
+  bool done = false;
 
-  //std::cout << "Exact\nSAT: " << ans.value << "\nAssignment: " << ans.ans << std::endl;
+  int choice;
+  std::cout << "Reading from instance.txt" << std::endl;
+  while (!done) {
+    std::cout << "Which algorithm would you like to run?\n 1. Fast\n 2. "
+                 "Exact\n 3. Quit\n>";
+    std::cin >> choice;
 
-  // solution ans3 = s.approx();
-  // std::cout << "SAT: " << ans3.value << "\nAssignment: " << ans3.ans <<
-  // std::endl;
-
-  solution ans2 = s2.approx();
-  std::cout << "\nApprox\nSAT: " << ans2.value << "\nAssignment: " << ans2.ans
-            << std::endl;
+    switch (choice) {
+    case 1:
+      ans = s.approx();
+      break;
+    case 2:
+      ans = s.exact();
+      break;
+    case 3:
+      done = true;
+      std::cout << "Now exiting ...\n";
+      continue;
+      break;
+    default:
+      std::cout << "Invalid selection, try again ...\n" << std::endl;
+      continue;
+      break;
+    }
+    std::cout << "\nApprox\nSAT: " << ans.value << "\nAssignment: " << ans.ans
+              << std::endl;
+    s.reset();
+  }
 
   return 0;
 }

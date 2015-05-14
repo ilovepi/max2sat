@@ -41,6 +41,10 @@ public:
 
   solution exact();
   solution approx();
+  void reset()
+  {
+    x.reset();
+  }
 
 private:
   boost::dynamic_bitset<> x;

@@ -1,3 +1,4 @@
+#!/usr/bin/env julia
 using JuMP
 
 using Cbc
@@ -159,3 +160,10 @@ function approx(clauses::Array{clause}, x_max::Int)
 	
 	return satisfied, x	
 end
+
+function main()
+	sat_solver("instance.txt")
+
+end 
+
+main()
