@@ -160,7 +160,7 @@ solution solver::approx() {
 
 int main() {
   // std::string filename = "../Data/instance.txt";
-  std::string filename = "../Data/test_25.txt";
+  std::string filename = "instance.txt";
   solver s(filename);
 
   solution ans;
